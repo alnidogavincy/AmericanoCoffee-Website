@@ -1,0 +1,836 @@
+<!DOCTYPE html>
+<html lang="en" >
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Americano Coffee — Made Fresh For You</title><meta name="description" content="Bold coffee. A little ritual. Explore five signature drinks from Americano Coffee — made fresh for you."><meta name="theme-color" content="#231008">
+  
+  
+</head>
+<body class="antialiased selection:bg-[#F2CE5A] selection:text-[#231008]">
+
+  
+  <div id="intro-overlay" role="dialog" aria-modal="true" aria-label="Coffee introduction">
+    
+    <button
+      id="skip-intro-btn"
+      type="button"
+      class="absolute top-6 right-7 z-30 flex items-center gap-2 px-4 py-2 rounded-full bg-[#3A1206]/75 hover:bg-[#260B04] text-[#F9E7D2] text-xs font-semibold tracking-widest uppercase border border-white/15 shadow-lg transition-all hover:scale-105 cursor-pointer"
+    >
+      <span>SKIP INTRO</span>
+      <span aria-hidden="true">→</span>
+    </button>
+
+    
+    <div class="absolute bottom-6 left-7 z-20 text-xs tracking-widest uppercase text-[#F9E7D2]/70 font-medium">
+      Americano Coffee · click anywhere to enter
+    </div>
+
+    
+    <div id="intro-scene" class="cursor-pointer" title="Click to enter">
+      <svg aria-hidden="true" id="intro-cup-svg" class="intro-cup-entering w-full h-full overflow-visible" viewBox="0 0 520 520" fill="none" xmlns="http://www.w3.org/2000/svg">
+        
+        <g opacity="0.88">
+          <ellipse cx="222" cy="296" rx="115" ry="122" transform="rotate(-18 222 296)" fill="#4D1706" />
+          <path d="M312 288 C355 316, 342 365, 295 348" stroke="#4D1706" stroke-width="22" stroke-linecap="round" fill="none" />
+        </g>
+
+        
+        <rect x="315" y="274" width="66" height="26" rx="10" transform="rotate(36 315 274)" fill="#D9F2EB" stroke="#B6DDD2" stroke-width="3" />
+
+        
+        <circle cx="260" cy="240" r="112" fill="#E6FAF4" stroke="#CBECE2" stroke-width="6" />
+        
+        <circle cx="260" cy="240" r="93" fill="#C9B199" />
+        <circle cx="260" cy="240" r="88" fill="#2A0E06" />
+
+        
+        <g class="intro-crema-swirl" style="transform-origin: 260px 240px;">
+          
+          <path d="M182 204 C198 164, 255 146, 304 166 C264 168, 224 195, 214 242 C205 282, 232 314, 266 322 C214 324, 166 266, 182 204 Z" fill="#B67643" opacity="0.92" />
+          <path d="M190 212 C204 176, 250 156, 292 170 C252 178, 222 206, 216 248 C211 278, 230 304, 254 316 C210 312, 176 262, 190 212 Z" fill="#CD8E59" opacity="0.78" />
+
+          
+          <ellipse cx="276" cy="248" rx="58" ry="62" fill="#1E0803" />
+          <path d="M298 202 A52 52 0 0 1 322 268" stroke="#4D2110" stroke-width="5" stroke-linecap="round" opacity="0.6" />
+
+          
+          <circle cx="206" cy="212" r="11" fill="#2A0E06" stroke="#DFAA78" stroke-width="2.5" />
+          <circle cx="203" cy="209" r="3" fill="#F7D7B5" />
+          <circle cx="195" cy="244" r="7.5" fill="#2A0E06" stroke="#DFAA78" stroke-width="2" />
+          <circle cx="193" cy="242" r="2" fill="#F7D7B5" />
+          <circle cx="222" cy="188" r="5" fill="#2A0E06" stroke="#DFAA78" stroke-width="1.5" />
+          <circle cx="242" cy="174" r="4" fill="#2A0E06" stroke="#DFAA78" stroke-width="1.5" />
+          <circle cx="196" cy="268" r="4.5" fill="#2A0E06" stroke="#DFAA78" stroke-width="1.5" />
+          <circle cx="212" cy="288" r="3.5" fill="#2A0E06" stroke="#DFAA78" stroke-width="1.2" />
+
+          
+          <path d="M278 236 C278 224, 296 222, 296 235 C296 222, 314 224, 314 236 C314 252, 296 262, 296 268 C296 262, 278 252, 278 236 Z" fill="#A86B3C" opacity="0.55" />
+        </g>
+
+        
+        <g class="intro-hand-entering">
+          
+          <path d="M352 155 L465 205 L425 325 L312 315 Z" fill="#4D1706" opacity="0.85" />
+          
+          <path d="M410 75 L495 110 L466 244 L388 286 L354 256 L376 196 L358 175 L335 232 L308 214 L348 112 Z" fill="#E8C39E" stroke="#5A2310" stroke-width="3" stroke-linejoin="round" />
+          
+          <path d="M335 232 C326 225, 326 208, 336 198 L368 135" stroke="#C5986E" stroke-width="4" stroke-linecap="round" />
+          <rect x="316" y="200" width="18" height="22" rx="8" transform="rotate(18 316 200)" fill="#F5DEC6" stroke="#B68960" stroke-width="1.5" />
+          <path d="M392 252 L442 214" stroke="#B68458" stroke-width="4" stroke-linecap="round" />
+        </g>
+      </svg>
+    </div>
+  </div>
+
+  
+  <a class="skip-link" href="#main-content">Skip to content</a><main id="main-content" tabindex="-1"><section
+    id="menu-section"
+    class="relative w-full min-h-screen h-screen max-h-[1080px] overflow-hidden flex flex-col justify-between transition-colors duration-700"
+    style="background: radial-gradient(circle at 50% 45%, var(--bg-secondary) 0%, var(--bg-primary) 75%);"
+  >
+    
+    <div id="foliage-layer" class="absolute inset-0 pointer-events-none z-0 overflow-hidden transition-transform duration-300 ease-out">
+      <svg aria-hidden="true" class="w-full h-full object-cover" viewBox="0 0 1600 960" preserveAspectRatio="xMidYMid slice" fill="none" xmlns="http://www.w3.org/2000/svg">
+        
+        <g id="foliage-back" fill="var(--leaf-3)" opacity="0.85" class="transition-colors duration-700">
+          <path d="M-60 220 C120 180, 290 260, 410 420 C240 410, 90 350, -60 220 Z" />
+          <path d="M620 -40 C690 120, 680 280, 610 430 C540 290, 540 120, 620 -40 Z" />
+          <path d="M820 -30 C920 110, 960 260, 900 410 C820 280, 790 140, 820 -30 Z" />
+          <path d="M1650 320 C1450 280, 1290 380, 1180 560 C1380 540, 1520 460, 1650 320 Z" />
+          <path d="M460 980 C480 780, 560 630, 690 520 C670 720, 590 860, 460 980 Z" />
+          <path d="M980 990 C940 790, 840 650, 720 550 C760 750, 850 890, 980 990 Z" />
+        </g>
+
+        
+        <g id="foliage-mid" fill="var(--leaf-2)" opacity="0.92" class="transition-colors duration-700">
+          
+          <path d="M-40 -20 C160 10, 340 110, 460 260 C260 240, 90 150, -40 -20 Z" />
+          <path d="M-50 80 C140 130, 290 250, 380 430 C180 390, 30 260, -50 80 Z" />
+          
+          <path d="M1050 -20 L1240 260 L1210 275 L1010 10 Z" />
+          <path d="M1120 -30 L1330 230 L1300 250 L1080 0 Z" />
+          <path d="M1200 -40 L1420 190 L1395 215 L1160 -10 Z" />
+          <path d="M1280 -40 L1510 140 L1490 170 L1240 -10 Z" />
+          
+          <path d="M40 990 C60 760, 160 560, 310 410 C270 640, 170 840, 40 990 Z" />
+          <path d="M160 1000 C220 790, 340 620, 490 490 C430 700, 310 870, 160 1000 Z" />
+          
+          <path d="M1220 980 L1040 670 L1065 655 L1250 960 Z" />
+          <path d="M1260 980 L1110 640 L1140 630 L1285 960 Z" />
+          <path d="M1300 980 L1190 625 L1220 620 L1325 960 Z" />
+          <path d="M1340 980 L1275 625 L1305 625 L1365 960 Z" />
+          <path d="M1380 980 L1360 640 L1390 645 L1405 960 Z" />
+          <path d="M1420 980 L1440 665 L1468 675 L1445 960 Z" />
+        </g>
+
+        
+        <g fill="var(--leaf-1)" opacity=".9"><path d="M 20 0 Q 220.3 -50.8 431.2 -125.7 Q 222.7 -72.4 20 0Z"/><path d="M 20 0 Q 245.0 -29.5 485.2 -82.0 Q 250.9 -50.9 20 0Z"/><path d="M 20 0 Q 259.0 -2.5 516.8 -26.0 Q 267.9 -23.0 20 0Z"/><path d="M 20 0 Q 256.3 26.6 513.8 34.5 Q 267.6 7.3 20 0Z"/><path d="M 20 0 Q 237.7 52.5 477.5 88.9 Q 250.7 34.7 20 0Z"/><path d="M 20 0 Q 209.8 72.2 421.8 130.5 Q 224.0 55.8 20 0Z"/><path d="M 20 0 Q 181.9 86.5 366.1 161.4 Q 197.3 71.6 20 0Z"/><path d="M 20 0 Q 161.6 100.3 326.1 191.3 Q 178.3 87.1 20 0Z"/><path d="M 20 0 Q 151.0 119.0 306.1 231.7 Q 169.3 108.1 20 0Z"/><path d="M 20 0 Q 146.4 145.3 298.3 288.2 Q 166.3 137.1 20 0Z"/><path d="M 20 0 Q 140.6 176.6 287.8 355.4 Q 161.9 171.7 20 0Z"/><path d="M 20 0 Q 127.3 205.9 261.7 418.6 Q 149.5 204.3 20 0Z"/><path d="M 20 0 Q 104.6 224.8 215.3 460.2 Q 126.9 226.2 20 0Z"/><path d="M 20 0 Q 74.9 227.9 154.5 469.0 Q 96.9 231.8 20 0Z"/><path d="M 20 0 Q 44.1 216.0 90.8 446.8 Q 65.3 221.8 20 0Z"/><path d="M 20 0 Q 16.8 195.9 34.2 407.4 Q 37.1 203.3 20 0Z"/><path d="M 20 0 Q -5.5 177.0 -12.4 370.6 Q 13.7 186.2 20 0Z"/><path d="M 20 0 Q -25.7 167.0 -54.9 352.2 Q -7.7 178.2 20 0Z"/><path d="M 20 0 Q -48.3 167.7 -102.6 356.1 Q -31.9 181.3 20 0Z"/></g><g fill="var(--leaf-1)" opacity=".9"><path d="M 1530 50 Q 1567.2 221.7 1624.6 403.0 Q 1585.5 224.3 1530 50Z"/><path d="M 1530 50 Q 1548.4 242.0 1585.9 447.6 Q 1566.4 247.6 1530 50Z"/><path d="M 1530 50 Q 1525.0 253.1 1537.4 472.8 Q 1542.2 261.2 1530 50Z"/><path d="M 1530 50 Q 1500.4 250.0 1486.0 468.5 Q 1516.5 260.1 1530 50Z"/><path d="M 1530 50 Q 1478.9 233.4 1440.9 436.0 Q 1493.7 244.9 1530 50Z"/><path d="M 1530 50 Q 1463.1 209.0 1407.2 387.4 Q 1476.6 221.6 1530 50Z"/><path d="M 1530 50 Q 1451.7 185.0 1382.6 339.2 Q 1463.9 198.5 1530 50Z"/><path d="M 1530 50 Q 1440.6 167.3 1358.4 304.3 Q 1451.3 181.9 1530 50Z"/><path d="M 1530 50 Q 1425.0 157.8 1324.7 286.2 Q 1433.8 173.7 1530 50Z"/><path d="M 1530 50 Q 1402.8 153.1 1276.9 277.9 Q 1409.2 170.2 1530 50Z"/><path d="M 1530 50 Q 1376.4 147.2 1220.1 267.0 Q 1379.9 165.5 1530 50Z"/><path d="M 1530 50 Q 1351.9 135.1 1167.2 242.9 Q 1352.6 153.9 1530 50Z"/><path d="M 1530 50 Q 1336.5 115.2 1133.3 202.3 Q 1334.7 134.1 1530 50Z"/><path d="M 1530 50 Q 1334.8 89.9 1127.6 150.3 Q 1330.8 108.4 1530 50Z"/><path d="M 1530 50 Q 1345.8 64.1 1148.4 96.9 Q 1340.2 81.9 1530 50Z"/><path d="M 1530 50 Q 1363.7 41.5 1183.5 50.0 Q 1356.8 58.5 1530 50Z"/><path d="M 1530 50 Q 1380.4 23.1 1216.1 11.5 Q 1372.0 39.2 1530 50Z"/><path d="M 1530 50 Q 1389.5 6.2 1233.0 -24.0 Q 1379.4 21.2 1530 50Z"/><path d="M 1530 50 Q 1389.6 -13.0 1231.1 -64.7 Q 1377.5 0.6 1530 50Z"/></g><g fill="var(--leaf-1)" opacity=".9"><path d="M 1100 980 Q 912.2 834.4 694.9 696.4 Q 890.9 847.6 1100 980Z"/><path d="M 1100 980 Q 913.9 797.0 696.3 616.5 Q 890.5 806.8 1100 980Z"/><path d="M 1100 980 Q 928.5 765.2 724.7 548.3 Q 903.7 771.7 1100 980Z"/><path d="M 1100 980 Q 956.7 747.0 781.7 508.0 Q 931.3 750.5 1100 980Z"/><path d="M 1100 980 Q 993.4 745.5 856.7 502.4 Q 968.1 746.4 1100 980Z"/><path d="M 1100 980 Q 1031.1 756.9 933.8 523.5 Q 1006.1 755.7 1100 980Z"/><path d="M 1100 980 Q 1063.8 772.0 1001.2 552.1 Q 1039.4 768.6 1100 980Z"/><path d="M 1100 980 Q 1090.6 780.7 1056.6 567.2 Q 1066.9 774.8 1100 980Z"/><path d="M 1100 980 Q 1115.0 777.0 1107.4 556.7 Q 1092.2 768.1 1100 980Z"/><path d="M 1100 980 Q 1142.2 762.6 1164.1 523.8 Q 1120.7 750.3 1100 980Z"/><path d="M 1100 980 Q 1174.7 745.7 1232.5 485.6 Q 1155.1 729.8 1100 980Z"/><path d="M 1100 980 Q 1210.6 736.9 1308.2 464.6 Q 1193.5 718.0 1100 980Z"/><path d="M 1100 980 Q 1243.8 744.2 1378.7 477.2 Q 1229.3 723.0 1100 980Z"/><path d="M 1100 980 Q 1267.6 768.9 1429.8 526.0 Q 1255.6 746.3 1100 980Z"/><path d="M 1100 980 Q 1278.7 805.2 1454.8 599.6 Q 1269.0 781.9 1100 980Z"/><path d="M 1100 980 Q 1279.8 844.2 1459.1 678.7 Q 1272.2 820.5 1100 980Z"/><path d="M 1100 980 Q 1278.5 877.8 1458.8 747.0 Q 1273.2 853.8 1100 980Z"/><path d="M 1100 980 Q 1283.7 903.2 1472.2 798.5 Q 1281.1 878.9 1100 980Z"/><path d="M 1100 980 Q 1300.3 923.2 1509.6 839.0 Q 1301.0 898.6 1100 980Z"/></g><g fill="var(--leaf-2)" opacity=".9"><path d="M 0 850 Q 8.0 684.9 0.0 506.0 Q -8.0 678.0 0 850Z"/><path d="M 0 850 Q 30.0 670.9 46.1 474.9 Q 15.1 661.5 0 850Z"/><path d="M 0 850 Q 54.0 666.6 96.3 463.9 Q 40.4 655.0 0 850Z"/><path d="M 0 850 Q 75.6 675.4 141.9 480.3 Q 63.5 662.3 0 850Z"/><path d="M 0 850 Q 91.1 695.7 175.1 520.8 Q 80.5 681.6 0 850Z"/><path d="M 0 850 Q 99.6 721.7 193.8 573.2 Q 90.4 707.0 0 850Z"/><path d="M 0 850 Q 104.1 746.4 204.4 623.0 Q 96.3 731.1 0 850Z"/><path d="M 0 850 Q 109.8 765.1 217.9 660.6 Q 103.7 749.2 0 850Z"/><path d="M 0 850 Q 121.7 777.6 244.2 685.3 Q 117.6 761.0 0 850Z"/><path d="M 0 850 Q 140.7 787.3 285.6 704.5 Q 139.1 770.1 0 850Z"/><path d="M 0 850 Q 163.3 799.1 334.6 728.2 Q 164.6 781.6 0 850Z"/><path d="M 0 850 Q 182.7 816.0 376.8 763.0 Q 186.6 798.7 0 850Z"/><path d="M 0 850 Q 191.7 837.9 397.7 808.2 Q 198.0 821.1 0 850Z"/><path d="M 0 850 Q 187.2 861.3 390.3 856.8 Q 195.3 845.4 0 850Z"/><path d="M 0 850 Q 170.9 882.1 358.3 900.4 Q 180.3 867.3 0 850Z"/><path d="M 0 850 Q 149.1 898.2 315.0 934.4 Q 159.6 884.5 0 850Z"/><path d="M 0 850 Q 129.5 910.9 276.0 961.5 Q 141.0 898.3 0 850Z"/><path d="M 0 850 Q 117.1 924.0 252.0 989.7 Q 129.9 912.8 0 850Z"/><path d="M 0 850 Q 112.3 941.5 243.8 1027.1 Q 126.6 932.1 0 850Z"/></g>
+<g id="foliage-front" fill="var(--leaf-1)" class="transition-colors duration-700">
+          
+          <path d="M-30 340 C130 220, 330 160, 530 175 C390 320, 200 430, -30 490 Z" />
+          <path d="M-20 520 C160 410, 340 370, 520 400 C370 530, 180 620, -20 660 Z" />
+          
+          <path d="M60 980 C90 800, 175 650, 290 520 C255 710, 170 865, 60 980 Z" />
+          <path d="M130 990 C210 830, 325 700, 470 600 C395 770, 275 900, 130 990 Z" />
+          <path d="M220 1000 C340 880, 470 790, 620 735 C510 865, 370 955, 220 1000 Z" />
+          
+          <path d="M1640 160 C1470 280, 1360 470, 1330 700 C1485 570, 1590 390, 1640 160 Z" />
+          <path d="M1650 480 C1500 580, 1410 730, 1380 920 C1520 810, 1610 660, 1650 480 Z" />
+          
+          <path d="M580 960 C550 810, 570 670, 650 550 C665 700, 640 840, 580 960 Z" opacity="0.75" />
+        </g>
+      </svg>
+    </div>
+
+    
+    <header class="relative z-30 w-full px-6 md:px-12 pt-5 pb-2 flex items-center justify-between">
+      
+      <a href="#menu-section" class="flex items-center gap-2.5 group focus:outline-none">
+        <span class="w-7 h-7 rounded-full bg-[#4A1D0B] border border-[#F2CE5A]/40 flex items-center justify-center shadow-md group-hover:scale-110 transition-transform">
+          <svg aria-hidden="true" class="w-4 h-4" viewBox="0 0 24 24" fill="none">
+            <ellipse cx="12" cy="12" rx="7" ry="9.5" transform="rotate(-25 12 12)" fill="#C97A42" />
+            <path d="M9 5 C13 10, 11 14, 15 19" stroke="#2D1106" stroke-width="2" stroke-linecap="round" />
+          </svg>
+        </span>
+        <div class="flex items-baseline gap-1.5">
+          <span class="font-extrabold tracking-tight text-lg md:text-xl text-white">AMERICANO</span>
+          <span class="font-script text-xl md:text-2xl text-[#F2CE5A] -rotate-2">coffee.</span>
+        </div>
+      </a>
+
+      
+      <nav aria-label="Main navigation" class="hidden md:flex items-center gap-9 text-xs md:text-sm font-medium text-white/85 tracking-wide">
+        <a href="#menu-section" class="hover:text-[#F2CE5A] transition-colors">menu</a>
+        <a href="#our-story" class="hover:text-[#F2CE5A] transition-colors">our story</a>
+        <a href="#the-cafe" class="hover:text-[#F2CE5A] transition-colors">the café</a>
+      </nav>
+
+      
+      <div class="flex items-center gap-3">
+        <button
+          id="replay-intro-btn"
+          type="button"
+          class="hidden sm:inline-flex items-center gap-1.5 px-3 py-1.5 rounded-full bg-white/10 hover:bg-white/20 text-white/80 hover:text-white text-[11px] font-medium tracking-wider uppercase transition-all"
+          title="Replay Cup Intro Animation"
+        >
+          <span>↺ Intro</span>
+        </button>
+        <button
+          id="open-order-btn"
+          type="button"
+          class="flex items-center gap-2 px-4 md:px-5 py-2 rounded-full bg-[#D5E9DA] hover:bg-[#E7F6EB] text-[#1D120C] text-xs font-bold tracking-wider uppercase shadow-lg transition-all hover:scale-105 cursor-pointer"
+        >
+          <span>ORDER NOW</span>
+          <span id="cart-count-badge" class="hidden px-1.5 py-0.5 text-[10px] rounded-full bg-[#231008] text-[#F2CE5A] font-extrabold">0</span>
+          <span aria-hidden="true" class="text-sm leading-none">↗</span>
+        </button>
+      </div>
+    </header>
+
+    
+    <div id="hero-stage" class="relative z-10 flex-1 w-full max-w-[1600px] mx-auto px-6 md:px-12 grid grid-cols-12 items-center">
+
+      
+      <div class="pointer-events-none absolute inset-x-0 top-[11%] md:top-[9%] flex justify-center items-center z-10 select-none">
+        <div class="relative inline-block text-center">
+          <h1
+            aria-live="polite" aria-atomic="true" id="hero-giant-title"
+            class="font-display text-[#DAF2E4] text-[18vw] sm:text-[17.5vw] lg:text-[16.8vw] xl:text-[235px] leading-[0.82] tracking-[-0.015em] drop-shadow-[0_12px_35px_rgba(0,0,0,0.45)]"
+          >
+            AMERICANO
+          </h1>
+          
+          <span
+            id="hero-script-badge"
+            class="font-script text-[#F2CE5A] text-4xl sm:text-6xl lg:text-7xl absolute right-[8%] sm:right-[11%] top-[18%] sm:top-[20%] -rotate-6 drop-shadow-[0_4px_12px_rgba(0,0,0,0.65)] transition-all duration-500"
+          >
+            Iced
+          </span>
+        </div>
+      </div>
+
+      
+      <svg
+        id="hero-ribbon-svg"
+        class="pointer-events-none absolute inset-0 w-full h-full z-20 overflow-visible"
+        viewBox="0 0 1600 860"
+        preserveAspectRatio="none"
+        fill="none"
+        xmlns="http://www.w3.org/2000/svg"
+      >
+        <defs>
+          <filter id="ribbonGlow" x="-10%" y="-10%" width="120%" height="120%">
+            <feDropShadow dx="0" dy="8" stdDeviation="10" flood-color="#000000" flood-opacity="0.38" />
+          </filter>
+        </defs>
+        
+        <path
+          d="M 0 708 Q 650 692, 1280 715"
+          stroke="#E4B858"
+          stroke-width="10"
+          stroke-linecap="round"
+          opacity="0.78"
+        />
+        
+        <path
+          id="hero-ribbon-path"
+          class="hero-ribbon-path ribbon-redraw"
+          filter="url(#ribbonGlow)"
+          d="M -30 165 C 210 155, 420 285, 650 495 C 790 620, 935 615, 1055 460 C 1150 335, 1345 360, 1375 450 C 1395 515, 1295 555, 1255 500 C 1210 440, 1295 350, 1465 390"
+          stroke="#DAF2E4"
+          stroke-width="26"
+          stroke-linecap="round"
+          stroke-linejoin="round"
+        />
+      </svg>
+
+      
+      <div class="col-span-12 md:col-span-4 z-30 flex flex-col justify-between h-full py-4 md:py-8 pointer-events-auto">
+        
+        <div class="flex flex-col items-start gap-4 mt-1 md:mt-2">
+          <div class="flex items-baseline gap-1.5">
+            <span id="slide-num-current" class="font-display text-5xl md:text-6xl text-white tracking-wide">01</span>
+            <span class="text-xs md:text-sm font-semibold text-white/65 tracking-widest">/ 05</span>
+          </div>
+
+          
+          <div class="relative w-24 h-24 md:w-28 md:h-28 flex items-center justify-center my-1">
+            <svg aria-hidden="true" class="spin-badge w-full h-full" viewBox="0 0 120 120">
+              <defs>
+                <path id="badgeCirclePath" d="M 60, 60 m -44, 0 a 44,44 0 1,1 88,0 a 44,44 0 1,1 -88,0" />
+              </defs>
+              <text fill="#F7F4EE" font-size="8.3" font-weight="700" letter-spacing="2.35">
+                <textPath href="#badgeCirclePath" startOffset="0%">
+                  AMERICANO COFFEE · NOT AVERAGE · AMERICANO COFFEE ·
+                </textPath>
+              </text>
+            </svg>
+            
+            <div class="absolute inset-0 flex items-center justify-center">
+              <div class="w-11 h-11 rounded-full bg-[#2B1208]/70 backdrop-blur-sm flex items-center justify-center shadow-inner border border-white/10">
+                <svg aria-hidden="true" class="w-7 h-7 drop-shadow-md" viewBox="0 0 40 40" fill="none">
+                  <ellipse cx="20" cy="20" rx="11" ry="15" transform="rotate(-28 20 20)" fill="url(#beanGrad1)" />
+                  <path d="M15 8 C21 16, 18 24, 25 32" stroke="#220B04" stroke-width="2.6" stroke-linecap="round" />
+                  <ellipse cx="16" cy="14" rx="2.5" ry="5" transform="rotate(-28 16 14)" fill="#E39B66" opacity="0.45" />
+                  <defs>
+                    <linearGradient id="beanGrad1" x1="8" y1="6" x2="32" y2="34" gradientUnits="userSpaceOnUse">
+                      <stop stop-color="#C8763E" />
+                      <stop offset="0.55" stop-color="#7B3918" />
+                      <stop offset="1" stop-color="#3B1508" />
+                    </linearGradient>
+                  </defs>
+                </svg>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        
+        <div class="mt-auto pt-24 md:pt-0 max-w-xs sm:max-w-sm">
+          <div class="text-[10px] md:text-xs font-bold uppercase tracking-[0.22em] text-[#F2CE5A] mb-2 flex items-center gap-2">
+            <span>— MADE FRESH FOR YOU</span>
+          </div>
+          <h2 id="hero-tagline" class="text-2xl sm:text-3xl lg:text-4xl font-extrabold text-white leading-[1.08] tracking-tight mb-3">
+            bold. black.<br />fearless.
+          </h2>
+          <p id="hero-description" class="text-xs sm:text-sm text-white/80 leading-relaxed mb-6 font-normal">
+            Double-shot espresso over crystal ice. Zero noise, maximum caffeine — the purist's pick.
+          </p>
+
+          
+          <div class="flex items-center gap-5">
+            <button
+              id="taste-it-btn"
+              type="button"
+              class="px-6 py-3 rounded-full bg-[#EAF8F0] hover:bg-white text-[#1B0F0A] font-bold text-xs sm:text-sm tracking-wider uppercase shadow-[0_8px_25px_rgba(0,0,0,0.4)] hover:scale-105 active:scale-95 transition-all flex items-center gap-2.5 cursor-pointer"
+            >
+              <span>TASTE IT</span>
+              <span class="text-base leading-none font-extrabold">+</span>
+            </button>
+            <div id="hero-price" class="font-display text-2xl sm:text-3xl text-[#F2CE5A] tracking-wider drop-shadow">
+              $ 4.50
+            </div>
+          </div>
+        </div>
+      </div>
+
+      
+      <div class="col-span-12 md:col-span-4 relative h-[380px] sm:h-[460px] md:h-[580px] flex items-end justify-center z-20 pointer-events-none">
+        
+        <div id="floating-accents" class="absolute inset-0 pointer-events-none z-30">
+          
+          <div class="floating-item absolute left-[12%] top-[34%] w-12 h-12" style="--rot: -22deg; --dur: 4.2s; --delay: 0.1s;">
+            <svg aria-hidden="true" viewBox="0 0 48 48" class="w-full h-full drop-shadow-[0_12px_12px_rgba(0,0,0,0.5)]">
+              <ellipse cx="24" cy="24" rx="13" ry="18" transform="rotate(-25 24 24)" fill="url(#beanGrad1)" />
+              <path d="M18 9 C25 19, 22 29, 30 39" stroke="#1E0903" stroke-width="3" stroke-linecap="round" />
+            </svg>
+          </div>
+          
+          <div class="floating-item absolute right-[8%] top-[22%] w-16 h-16" style="--rot: 35deg; --dur: 5.1s; --delay: 0.4s;">
+            <svg aria-hidden="true" viewBox="0 0 48 48" class="w-full h-full drop-shadow-[0_14px_16px_rgba(0,0,0,0.55)]">
+              <ellipse cx="24" cy="24" rx="14" ry="19" transform="rotate(32 24 24)" fill="url(#beanGrad1)" />
+              <path d="M31 9 C23 19, 25 29, 17 39" stroke="#1E0903" stroke-width="3.2" stroke-linecap="round" />
+            </svg>
+          </div>
+          
+          <div class="floating-item absolute left-[2%] bottom-[26%] w-14 h-14" style="--rot: 18deg; --dur: 4.7s; --delay: 0.8s;">
+            <svg aria-hidden="true" viewBox="0 0 48 48" class="w-full h-full drop-shadow-[0_10px_12px_rgba(0,0,0,0.5)]">
+              <ellipse cx="24" cy="24" rx="13" ry="17" transform="rotate(20 24 24)" fill="url(#beanGrad1)" />
+              <path d="M29 10 C22 19, 24 28, 19 38" stroke="#1E0903" stroke-width="2.8" stroke-linecap="round" />
+            </svg>
+          </div>
+          
+          <div class="floating-item absolute right-[2%] bottom-[38%] w-12 h-12" style="--rot: -40deg; --dur: 3.9s; --delay: 0.3s;">
+            <svg aria-hidden="true" viewBox="0 0 48 48" class="w-full h-full drop-shadow-[0_10px_12px_rgba(0,0,0,0.5)]">
+              <ellipse cx="24" cy="24" rx="12" ry="16" transform="rotate(-35 24 24)" fill="url(#beanGrad1)" />
+              <path d="M16 11 C24 19, 22 28, 31 37" stroke="#1E0903" stroke-width="2.6" stroke-linecap="round" />
+            </svg>
+          </div>
+          
+          <div class="ice-accent floating-item absolute left-[18%] top-[48%] w-10 h-10" style="--rot: 15deg; --dur: 4.4s; --delay: 0.2s;">
+            <svg aria-hidden="true" viewBox="0 0 40 40" class="w-full h-full drop-shadow-[0_8px_14px_rgba(120,215,255,0.35)]">
+              <rect x="6" y="6" width="28" height="28" rx="7" transform="rotate(15 20 20)" fill="#8BE0FF" fill-opacity="0.72" stroke="#E0F7FF" stroke-width="2" />
+              <path d="M13 14 L24 12 L27 22" stroke="#FFFFFF" stroke-width="2" stroke-linecap="round" opacity="0.85" />
+            </svg>
+          </div>
+          
+          <div class="ice-accent floating-item absolute right-[18%] bottom-[30%] w-9 h-9" style="--rot: -24deg; --dur: 4.8s; --delay: 0.6s;">
+            <svg aria-hidden="true" viewBox="0 0 40 40" class="w-full h-full drop-shadow-[0_8px_14px_rgba(120,215,255,0.35)]">
+              <rect x="7" y="7" width="26" height="26" rx="6" transform="rotate(-20 20 20)" fill="#7AD7FA" fill-opacity="0.68" stroke="#E0F7FF" stroke-width="2" />
+              <path d="M14 16 L23 14" stroke="#FFFFFF" stroke-width="2" stroke-linecap="round" opacity="0.85" />
+            </svg>
+          </div>
+        </div>
+
+        
+        <div id="hero-cup-wrapper" class="relative z-20 flex items-end justify-center w-full h-full translate-y-4">
+          <img
+            id="hero-cup-img"
+            src="/assets/asset-01.png"
+            alt="Hand holding Iced Coffee Cup"
+            class="cup-Rising max-h-[370px] sm:max-h-[450px] md:max-h-[545px] w-auto object-contain drop-shadow-[0_25px_35px_rgba(0,0,0,0.65)] select-none"
+          />
+        </div>
+      </div>
+
+      
+      <div class="col-span-12 md:col-span-4 z-30 flex flex-col items-end justify-center gap-3 mt-4 md:mt-24">
+        <div id="ingredient-pills-container" class="w-full max-w-[240px] sm:max-w-[265px] flex flex-col gap-2.5">
+          
+        </div>
+      </div>
+    </div>
+
+    
+    <div class="relative z-30 w-full px-6 md:px-12 pb-5 pt-2 flex items-center justify-between">
+      <div class="hidden sm:flex items-center gap-2 text-[11px] uppercase tracking-[0.2em] text-white/55 font-medium">
+        <span id="slide-flavor-tag">PURE ARABICA ROAST</span>
+      </div>
+
+      
+      <div class="flex items-center gap-4 mx-auto sm:mx-0">
+        <button
+          id="prev-slide-btn"
+          type="button"
+          aria-label="Previous drink"
+          class="w-10 h-10 rounded-full border border-white/35 bg-black/25 hover:bg-[#DAF2E4] text-white hover:text-[#1D120C] flex items-center justify-center transition-all hover:scale-110 active:scale-95 cursor-pointer"
+        >
+          ←
+        </button>
+
+        <div id="carousel-dots" class="flex items-center gap-2.5 px-2">
+          
+        </div>
+
+        <button
+          id="next-slide-btn"
+          type="button"
+          aria-label="Next drink"
+          class="w-10 h-10 rounded-full border border-white/35 bg-[#DAF2E4]/90 hover:bg-white text-[#1D120C] flex items-center justify-center transition-all hover:scale-110 active:scale-95 shadow-md cursor-pointer"
+        >
+          →
+        </button>
+      </div>
+
+      
+      <div class="hidden md:block text-[10px] font-semibold uppercase tracking-[0.2em] text-white/70">
+        SCROLL, DRAG OR USE ← → TO EXPLORE
+      </div>
+    </div>
+  </section>
+
+  
+  <section
+    id="our-story"
+    class="relative w-full min-h-screen py-24 md:py-32 overflow-hidden flex items-center"
+    style="background: radial-gradient(circle at 25% 50%, #581D12 0%, #37110B 52%, #220A06 100%);"
+  >
+    
+    <svg
+      class="pointer-events-none absolute inset-0 w-full h-full z-10 overflow-visible"
+      viewBox="0 0 1600 920"
+      preserveAspectRatio="none"
+      fill="none"
+      xmlns="http://www.w3.org/2000/svg"
+    >
+      
+      <path
+        d="M 1640 165 C 1120 175, 55 310, 65 595 C 75 845, 780 825, 1640 795"
+        stroke="rgba(218, 242, 228, 0.22)"
+        stroke-width="46"
+        stroke-linecap="round"
+      />
+      
+      <path
+        d="M 1640 165 C 1120 175, 55 310, 65 595 C 75 845, 780 825, 1640 795"
+        stroke="#DAF2E4"
+        stroke-width="26"
+        stroke-linecap="round"
+      />
+    </svg>
+
+    
+    <div class="pointer-events-none absolute left-[14%] top-[8%] w-20 h-20 floating-item z-20" style="--rot: -18deg; --dur: 5.2s;">
+      <svg aria-hidden="true" viewBox="0 0 60 60" class="w-full h-full drop-shadow-[0_18px_20px_rgba(0,0,0,0.6)]">
+        <ellipse cx="30" cy="30" rx="17" ry="23" transform="rotate(-22 30 30)" fill="url(#beanGrad1)" />
+        <path d="M22 10 C31 23, 27 37, 38 49" stroke="#1E0903" stroke-width="3.6" stroke-linecap="round" />
+      </svg>
+    </div>
+    <div class="pointer-events-none absolute left-[22%] bottom-[4%] w-16 h-16 floating-item z-20" style="--rot: 12deg; --dur: 4.6s; --delay: 0.5s;">
+      <svg aria-hidden="true" viewBox="0 0 60 60" class="w-full h-full drop-shadow-[0_16px_18px_rgba(0,0,0,0.6)]">
+        <ellipse cx="30" cy="30" rx="16" ry="22" transform="rotate(14 30 30)" fill="url(#beanGrad1)" />
+        <path d="M35 10 C26 23, 29 37, 23 49" stroke="#1E0903" stroke-width="3.5" stroke-linecap="round" />
+      </svg>
+    </div>
+    <div class="pointer-events-none absolute right-[14%] bottom-[14%] w-16 h-16 floating-item z-20" style="--rot: 38deg; --dur: 4.9s; --delay: 0.9s;">
+      <svg aria-hidden="true" viewBox="0 0 60 60" class="w-full h-full drop-shadow-[0_16px_18px_rgba(0,0,0,0.6)]">
+        <ellipse cx="30" cy="30" rx="15" ry="21" transform="rotate(38 30 30)" fill="url(#beanGrad1)" />
+        <path d="M38 12 C28 24, 30 36, 21 48" stroke="#1E0903" stroke-width="3.4" stroke-linecap="round" />
+      </svg>
+    </div>
+
+    
+    <div class="relative z-20 w-full max-w-[1440px] mx-auto px-6 md:px-14 grid grid-cols-1 lg:grid-cols-12 items-center gap-12">
+      
+      <div class="lg:col-span-6 flex items-center justify-center relative">
+        <div class="relative group">
+          
+          <div class="absolute -inset-6 bg-gradient-to-tr from-[#F2CE5A]/15 via-[#52B788]/10 to-transparent rounded-full blur-2xl"></div>
+          <img
+            src="/assets/asset-02.png"
+            alt="Symmetrical Coffee Farmer Harvest Illustration"
+            class="relative z-10 w-[300px] sm:w-[360px] md:w-[410px] h-auto object-contain drop-shadow-[0_25px_45px_rgba(0,0,0,0.65)] transition-transform duration-500 group-hover:scale-[1.03]"
+          />
+        </div>
+      </div>
+
+      
+      <div class="lg:col-span-6 flex flex-col items-start text-left max-w-xl">
+        <div class="text-xs font-bold uppercase tracking-[0.24em] text-[#F2CE5A] mb-3">
+          — FROM CROP TO CUP
+        </div>
+
+        <h2 class="font-display text-[#DAF2E4] text-6xl sm:text-7xl md:text-8xl leading-[0.88] tracking-tight mb-6 drop-shadow-[0_8px_24px_rgba(0,0,0,0.4)]">
+          GROWN SLOW.<br />
+          POURED FAST.
+        </h2>
+
+        <p class="text-sm sm:text-base text-white/80 leading-relaxed mb-10 max-w-lg">
+          Every bean in your cup was picked by hand on high-altitude farms, sun-dried, small-batch roasted and brewed the way it was meant to be. No shortcuts. Just flavor.
+        </p>
+
+        
+        <div class="grid grid-cols-3 gap-6 sm:gap-10 w-full pt-2 border-t border-white/10">
+          <div>
+            <div class="font-display text-4xl sm:text-5xl text-[#F2CE5A] tracking-wide mb-1">
+              1200m
+            </div>
+            <div class="text-[10px] sm:text-xs font-bold uppercase tracking-[0.16em] text-white/70">
+              ALTITUDE GROWN
+            </div>
+          </div>
+
+          <div>
+            <div class="font-display text-4xl sm:text-5xl text-[#F2CE5A] tracking-wide mb-1">
+              72h
+            </div>
+            <div class="text-[10px] sm:text-xs font-bold uppercase tracking-[0.16em] text-white/70">
+              SLOW COLD BREW
+            </div>
+          </div>
+
+          <div>
+            <div class="font-display text-4xl sm:text-5xl text-[#F2CE5A] tracking-wide mb-1">
+              100%
+            </div>
+            <div class="text-[10px] sm:text-xs font-bold uppercase tracking-[0.16em] text-white/70">
+              ARABICA BEANS
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  
+  <section
+    id="roaster-cta"
+    class="relative w-full min-h-[92vh] py-24 overflow-hidden flex flex-col items-center justify-center text-center"
+    style="background: radial-gradient(circle at 50% 45%, #4A1C10 0%, #2C0F08 58%, #1A0804 100%);"
+  >
+    
+    <svg
+      class="pointer-events-none absolute inset-0 w-full h-full z-10 overflow-visible"
+      viewBox="0 0 1600 860"
+      preserveAspectRatio="xMidYMid slice"
+      fill="none"
+      xmlns="http://www.w3.org/2000/svg"
+    >
+      
+      <path
+        d="M -40 190 C 310 250, 620 220, 815 280 C 985 335, 1020 520, 895 565 C 775 605, 735 445, 865 425 C 1015 400, 1185 520, 1345 660"
+        stroke="#EDF8F1"
+        stroke-width="24"
+        stroke-linecap="round"
+        stroke-linejoin="round"
+        filter="url(#ribbonGlow)"
+      />
+
+      
+      <g class="coffee-drop-glow">
+        <path
+          d="M 915 315 C 915 315, 868 392, 868 428 C 868 456, 889 478, 915 478 C 941 478, 962 456, 962 428 C 962 392, 915 315, 915 315 Z"
+          fill="url(#goldDropGrad)"
+        />
+        <ellipse cx="901" cy="432" rx="7" ry="13" transform="rotate(-15 901 432)" fill="#FFF7D6" opacity="0.6" />
+      </g>
+
+      <defs>
+        <linearGradient id="goldDropGrad" x1="915" y1="315" x2="915" y2="478" gradientUnits="userSpaceOnUse">
+          <stop stop-color="#FFF099" />
+          <stop offset="0.55" stop-color="#F2CE5A" />
+          <stop offset="1" stop-color="#D49B27" />
+        </linearGradient>
+      </defs>
+    </svg>
+
+    
+    
+    <div class="pointer-events-none absolute left-[12%] top-[28%] w-20 h-20 floating-item z-20" style="--rot: 8deg; --dur: 4.8s;">
+      <svg aria-hidden="true" viewBox="0 0 60 60" class="w-full h-full drop-shadow-[0_18px_20px_rgba(0,0,0,0.65)]">
+        <ellipse cx="30" cy="30" rx="17" ry="23" transform="rotate(8 30 30)" fill="url(#beanGrad1)" />
+        <path d="M31 9 C27 22, 33 36, 28 50" stroke="#1E0903" stroke-width="3.5" stroke-linecap="round" />
+      </svg>
+    </div>
+    
+    <div class="pointer-events-none absolute left-[46%] top-[24%] w-10 h-10 floating-item blur-[1px] opacity-85 z-10" style="--rot: 35deg; --dur: 3.9s;">
+      <svg aria-hidden="true" viewBox="0 0 60 60" class="w-full h-full">
+        <ellipse cx="30" cy="30" rx="15" ry="20" transform="rotate(35 30 30)" fill="url(#beanGrad1)" />
+        <path d="M36 12 C28 24, 30 36, 22 48" stroke="#1E0903" stroke-width="3.2" stroke-linecap="round" />
+      </svg>
+    </div>
+    
+    <div class="pointer-events-none absolute left-[23%] bottom-[21%] w-12 h-12 floating-item blur-[1px] z-10" style="--rot: 42deg; --dur: 4.3s; --delay: 0.4s;">
+      <svg aria-hidden="true" viewBox="0 0 60 60" class="w-full h-full">
+        <ellipse cx="30" cy="30" rx="15" ry="21" transform="rotate(42 30 30)" fill="url(#beanGrad1)" />
+        <path d="M38 12 C28 24, 30 36, 21 48" stroke="#1E0903" stroke-width="3.2" stroke-linecap="round" />
+      </svg>
+    </div>
+    
+    <div class="pointer-events-none absolute right-[10%] top-[34%] w-14 h-14 floating-item z-20" style="--rot: -12deg; --dur: 5.1s; --delay: 0.7s;">
+      <svg aria-hidden="true" viewBox="0 0 60 60" class="w-full h-full drop-shadow-[0_14px_16px_rgba(0,0,0,0.6)]">
+        <ellipse cx="30" cy="30" rx="15" ry="21" transform="rotate(-12 30 30)" fill="url(#beanGrad1)" />
+        <path d="M27 10 C32 23, 28 36, 33 49" stroke="#1E0903" stroke-width="3.2" stroke-linecap="round" />
+      </svg>
+    </div>
+    
+    <div class="pointer-events-none absolute right-[16%] bottom-[16%] w-14 h-14 floating-item z-20" style="--rot: 28deg; --dur: 4.5s; --delay: 0.2s;">
+      <svg aria-hidden="true" viewBox="0 0 60 60" class="w-full h-full drop-shadow-[0_14px_16px_rgba(0,0,0,0.6)]">
+        <ellipse cx="30" cy="30" rx="15" ry="21" transform="rotate(28 30 30)" fill="url(#beanGrad1)" />
+        <path d="M36 11 C28 23, 30 36, 23 48" stroke="#1E0903" stroke-width="3.2" stroke-linecap="round" />
+      </svg>
+    </div>
+
+    
+    <div class="relative z-30 max-w-xl mx-auto px-6 mt-28">
+      <div class="text-[11px] sm:text-xs font-bold uppercase tracking-[0.26em] text-[#F2CE5A] mb-3">
+        — FRESH OUT OF THE ROASTER
+      </div>
+
+      <h2 class="font-display text-[#EDF8F1] text-6xl sm:text-7xl md:text-8xl leading-[0.86] tracking-tight mb-8 drop-shadow-[0_10px_30px_rgba(0,0,0,0.55)]">
+        READY FOR<br />
+        YOUR CUP?
+      </h2>
+
+      <button
+        id="grab-yours-btn"
+        type="button"
+        class="inline-flex items-center gap-3 px-8 py-4 rounded-full bg-[#F2CE5A] hover:bg-[#FFE07D] text-[#1F0E07] font-extrabold text-xs sm:text-sm tracking-[0.18em] uppercase shadow-[0_12px_35px_rgba(242,206,90,0.35)] hover:scale-105 active:scale-95 transition-all cursor-pointer"
+      >
+        <span>GRAB YOURS</span>
+        <span class="text-base leading-none">↗</span>
+      </button>
+    </div>
+  </section>
+
+  
+  <section
+    id="the-cafe"
+    class="relative w-full h-screen min-h-[640px] max-h-[1050px] overflow-hidden select-none bg-[#23120B]"
+  >
+    
+    <div class="absolute inset-0 w-full h-full">
+      <img
+        src="/assets/mural.jpg"
+        alt="Coffee For Every Moment Editorial Mural"
+        class="w-full h-full object-cover filter brightness-[0.48] sepia-[0.35] saturate-[0.65] contrast-[0.95]"
+      />
+    </div>
+
+    
+    <div id="mural-lit-layer" class="absolute inset-0 w-full h-full pointer-events-none">
+      <img
+        src="/assets/mural.jpg"
+        alt="Coffee For Every Moment Editorial Mural Active"
+        class="w-full h-full object-cover filter brightness-[1.06] saturate-[1.22] contrast-[1.04] scale-[1.015]"
+      />
+    </div>
+
+    
+    <div
+      id="mural-cursor-ring"
+      class="pointer-events-none absolute z-20 -translate-x-1/2 -translate-y-1/2 w-[330px] h-[330px] rounded-full border border-[#231008]/40 shadow-[0_0_60px_rgba(255,238,200,0.25)_inset] flex items-start justify-center pt-4 transition-transform duration-75"
+      style="left: 50%; top: 50%;"
+    >
+      <div class="w-11 h-11 rounded-full border border-[#231008]/55 bg-[#FBF4E6]/80 backdrop-blur-sm flex items-center justify-center text-[9px] font-extrabold tracking-widest uppercase text-[#231008] shadow-sm">
+        MOVE
+      </div>
+    </div>
+
+    
+    <div class="absolute top-7 left-6 md:left-10 z-30 max-w-md px-5 py-3.5 rounded-2xl bg-[#2B1209]/85 backdrop-blur-md border border-white/15 shadow-2xl">
+      <div class="text-[11px] sm:text-xs font-extrabold uppercase tracking-[0.2em] text-[#F2CE5A] mb-1">
+        — COFFEE FOR EVERY MOMENT
+      </div>
+      <div class="text-xs sm:text-sm text-[#F5EBE1]/90 font-normal">
+        A little coffee. A little color. A moment for you.
+      </div>
+    </div>
+
+    
+    <footer class="absolute inset-x-0 bottom-0 z-30 px-6 md:px-10 py-4 bg-gradient-to-t from-[#160804]/90 via-[#160804]/55 to-transparent flex flex-wrap items-center justify-between gap-4 text-xs text-white/85">
+      
+      <div class="flex items-center gap-2">
+        <span class="font-extrabold tracking-tight text-base text-white">AMERICANO</span>
+        <span class="font-script text-xl text-[#F2CE5A]">coffee.</span>
+      </div>
+
+      
+      <div class="text-[11px] sm:text-xs text-white/75 tracking-wider">
+        Made fresh. Every single day.
+      </div>
+
+      
+      <div class="flex items-center gap-4">
+        <button
+          id="footer-order-btn"
+          type="button"
+          class="text-xs font-semibold text-[#F2CE5A] hover:underline cursor-pointer"
+        >
+          your cup (<span id="footer-cart-count">0</span>) ☕
+        </button>
+        <a
+          href="#menu-section"
+          class="px-3 py-1 rounded-full bg-white/15 hover:bg-white/25 text-white text-[11px] font-semibold tracking-wider uppercase transition-all"
+        >
+          top ↑
+        </a>
+      </div>
+    </footer>
+  </section>
+
+  
+</main><div
+    id="order-modal"
+    class="fixed inset-0 z-50 hidden items-center justify-end bg-black/65 backdrop-blur-sm transition-opacity"
+    role="dialog"
+    aria-modal="true"
+    aria-labelledby="order-modal-title"
+  >
+    <div class="relative w-full max-w-md h-full bg-[#241008] border-l border-white/15 text-[#F7F4EE] p-6 sm:p-8 flex flex-col justify-between overflow-y-auto shadow-2xl">
+      <div>
+        
+        <div class="flex items-center justify-between pb-5 border-b border-white/10">
+          <div>
+            <div class="text-[10px] font-bold uppercase tracking-[0.22em] text-[#F2CE5A]">
+              — YOUR DAILY RITUAL
+            </div>
+            <h3 id="order-modal-title" class="font-display text-3xl text-[#DAF2E4] tracking-wide mt-0.5">
+              YOUR CUP ORDER
+            </h3>
+          </div>
+          <button
+            id="close-order-btn"
+            type="button"
+            aria-label="Close Order Drawer"
+            class="w-9 h-9 rounded-full bg-white/10 hover:bg-white/20 text-white flex items-center justify-center text-sm font-bold cursor-pointer"
+          >
+            ✕
+          </button>
+        </div>
+
+        
+        <div class="mt-5">
+          <label class="block text-[11px] font-bold uppercase tracking-wider text-white/60 mb-2.5">
+            Quick Add Signature Drink
+          </label>
+          <div id="modal-drink-selector" class="flex flex-wrap gap-2">
+            
+          </div>
+        </div>
+
+        
+        <div class="mt-5 grid grid-cols-2 gap-3">
+          <div>
+            <label for="custom-ice-select" class="block text-[10px] font-bold uppercase tracking-wider text-white/60 mb-1">
+              Ice Level
+            </label>
+            <select
+              id="custom-ice-select"
+              class="w-full rounded-xl bg-[#35180D] border border-white/15 px-3 py-2 text-xs text-white focus:outline-none focus:border-[#F2CE5A]"
+            >
+              <option value="Crystal Ice (Regular)">Crystal Ice (Regular)</option>
+              <option value="Light Ice">Light Ice</option>
+              <option value="Extra Ice">Extra Ice</option>
+              <option value="Warm / Steamed">Warm / Steamed</option>
+            </select>
+          </div>
+          <div>
+            <label for="custom-milk-select" class="block text-[10px] font-bold uppercase tracking-wider text-white/60 mb-1">
+              Milk / Base
+            </label>
+            <select
+              id="custom-milk-select"
+              class="w-full rounded-xl bg-[#35180D] border border-white/15 px-3 py-2 text-xs text-white focus:outline-none focus:border-[#F2CE5A]"
+            >
+              <option value="House Signature">House Signature</option>
+              <option value="Barista Oat Milk">Barista Oat Milk</option>
+              <option value="Whole Organic Milk">Whole Organic Milk</option>
+              <option value="Almond Milk">Almond Milk</option>
+            </select>
+          </div>
+        </div>
+
+        
+        <div class="mt-6">
+          <div class="flex items-center justify-between mb-2">
+            <span class="text-[11px] font-bold uppercase tracking-wider text-white/60">Items in Cup Bag</span>
+            <button
+              id="clear-cart-btn"
+              type="button"
+              class="text-[11px] text-[#F2CE5A]/80 hover:text-[#F2CE5A] underline cursor-pointer"
+            >
+              Clear all
+            </button>
+          </div>
+          <div id="cart-items-list" class="space-y-2.5 max-h-[260px] overflow-y-auto pr-1">
+            
+          </div>
+        </div>
+      </div>
+
+      
+      <div class="pt-5 border-t border-white/15 mt-6">
+        <div class="flex items-center justify-between text-sm mb-4">
+          <span class="text-white/70 font-medium">Estimated Total</span>
+          <span id="cart-total-price" class="font-display text-3xl text-[#F2CE5A]">$ 0.00</span>
+        </div>
+
+        <button
+          id="checkout-btn"
+          type="button"
+          class="w-full py-3.5 rounded-full bg-[#F2CE5A] hover:bg-[#FFE07D] text-[#1D0E07] font-extrabold text-xs uppercase tracking-[0.2em] shadow-lg transition-all hover:scale-[1.02] active:scale-98 cursor-pointer"
+        >
+          SIMULATE ORDER →
+        </button>
+
+        <p class="demo-note">Portfolio demo · No payment or real order is submitted.</p><div role="status" id="checkout-status-msg" class="hidden mt-3 p-3 rounded-xl bg-[#DAF2E4]/15 border border-[#DAF2E4]/40 text-[#DAF2E4] text-xs text-center font-medium">
+        </div>
+      </div>
+    </div>
+  </div>
+
+  
+  <div
+    role="status" aria-live="polite" id="toast-notification"
+    class="fixed bottom-6 right-6 z-50 pointer-events-none opacity-0 translate-y-3 transition-all duration-300 px-5 py-3 rounded-full bg-[#DAF2E4] text-[#1E0E07] font-bold text-xs tracking-wider uppercase shadow-2xl flex items-center gap-2.5"
+  >
+    <span class="w-2 h-2 rounded-full bg-[#D35220]"></span>
+    <span id="toast-text">Added to your cup!</span>
+  </div>
+
+  
+  
+<script type="module" src="/src/main.js"></script></body>
+</html>

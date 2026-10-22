@@ -1,0 +1,247 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+    :root {
+      --bg-primary: #231008;
+      --bg-secondary: #38150A;
+      --leaf-1: #D35220;
+      --leaf-2: #8E3311;
+      --leaf-3: #4E1B09;
+      --mint-cream: #DAF2E4;
+      --accent-gold: #F2CE5A;
+      --pill-bg: rgba(208, 229, 214, 0.86);
+      --mx: 50%;
+      --my: 50%;
+    }
+
+    * {
+      box-sizing: border-box;
+      user-select: none;
+      -webkit-user-select: none;
+    }
+
+    body {
+      margin: 0;
+      padding: 0;
+      background-color: #1F0D07;
+      color: #F7F4EE;
+      font-family: 'Inter', sans-serif;
+      overflow-x: hidden;
+    }
+
+    .font-display {
+      font-family: 'Anton', Impact, sans-serif;
+      letter-spacing: 0.01em;
+      line-height: 0.86;
+      text-transform: uppercase;
+    }
+
+    .font-script {
+      font-family: 'Caveat', cursive;
+    }
+
+    /* Intro Screen Animations */
+    #intro-overlay {
+      position: fixed;
+      inset: 0;
+      z-index: 100;
+      background: radial-gradient(circle at 55% 45%, #D34E1E 0%, #B83D12 58%, #932D0A 100%);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      overflow: hidden;
+      transition: opacity 0.65s cubic-bezier(0.4, 0, 0.2, 1), visibility 0.65s;
+    }
+
+    #intro-overlay.hidden-intro {
+      opacity: 0;
+      visibility: hidden;
+      pointer-events: none;
+    }
+
+    #intro-scene {
+      position: relative;
+      width: 520px;
+      height: 520px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      transform-origin: 50% 50%;
+      will-change: transform;
+    }
+
+    /* Keyframe sequence matching 0:00 -> 0:02.8 of video */
+    .intro-cup-entering {
+      animation: cupEnterAndZoom 3.1s cubic-bezier(0.22, 1, 0.36, 1) forwards;
+    }
+
+    .intro-hand-entering {
+      animation: handReleaseAndExit 3.1s cubic-bezier(0.22, 1, 0.36, 1) forwards;
+    }
+
+    .intro-crema-swirl {
+      transform-origin: 260px 260px;
+      animation: cremaSwirl 3.1s ease-in-out forwards;
+    }
+
+    @keyframes cupEnterAndZoom {
+      0% {
+        transform: translate(190px, -170px) rotate(-28deg) scale(0.88);
+      }
+      28% {
+        transform: translate(0px, 0px) rotate(0deg) scale(1);
+      }
+      62% {
+        transform: translate(0px, 0px) rotate(24deg) scale(1.04);
+      }
+      82% {
+        transform: translate(0px, 0px) rotate(36deg) scale(1.12);
+      }
+      100% {
+        transform: translate(0px, 0px) rotate(55deg) scale(14);
+      }
+    }
+
+    @keyframes handReleaseAndExit {
+      0% {
+        transform: translate(0px, 0px) rotate(0deg);
+        opacity: 1;
+      }
+      30% {
+        transform: translate(0px, 0px) rotate(0deg);
+        opacity: 1;
+      }
+      58% {
+        transform: translate(240px, -220px) rotate(18deg);
+        opacity: 0;
+      }
+      100% {
+        transform: translate(280px, -260px) rotate(22deg);
+        opacity: 0;
+      }
+    }
+
+    @keyframes cremaSwirl {
+      0% { transform: rotate(0deg) scale(0.96); }
+      65% { transform: rotate(65deg) scale(1.03); }
+      100% { transform: rotate(160deg) scale(1.1); }
+    }
+
+    /* Spinning Stamp Badge */
+    @keyframes spinSlow {
+      from { transform: rotate(0deg); }
+      to { transform: rotate(360deg); }
+    }
+
+    .spin-badge {
+      animation: spinSlow 18s linear infinite;
+    }
+
+    /* Floating Beans & Ice Animation */
+    @keyframes floatBob {
+      0%, 100% { transform: translateY(0px) rotate(var(--rot, 0deg)); }
+      50% { transform: translateY(-12px) rotate(calc(var(--rot, 0deg) + 8deg)); }
+    }
+
+    .floating-item {
+      animation: floatBob var(--dur, 4.5s) ease-in-out infinite;
+      animation-delay: var(--delay, 0s);
+    }
+
+    /* Ribbon SVG Draw Animation */
+    .hero-ribbon-path {
+      stroke-dasharray: 2400;
+      stroke-dashoffset: 0;
+      transition: d 0.7s cubic-bezier(0.22, 1, 0.36, 1);
+    }
+
+    .ribbon-redraw {
+      animation: drawRibbon 1.05s cubic-bezier(0.22, 1, 0.36, 1) forwards;
+    }
+
+    @keyframes drawRibbon {
+      0% { stroke-dashoffset: 2400; }
+      100% { stroke-dashoffset: 0; }
+    }
+
+    /* Giant Title Letter Stagger */
+    .giant-letter {
+      display: inline-block;
+      animation: letterPop 0.62s cubic-bezier(0.16, 1, 0.3, 1) backwards;
+    }
+
+    @keyframes letterPop {
+      0% {
+        opacity: 0;
+        transform: translateY(68%) scaleY(1.18) rotate(3deg);
+      }
+      100% {
+        opacity: 1;
+        transform: translateY(0) scaleY(1) rotate(0deg);
+      }
+    }
+
+    /* Cup Rise Entrance */
+    .cup-Rising {
+      animation: cupRiseUp 0.68s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+    }
+
+    @keyframes cupRiseUp {
+      0% {
+        opacity: 0;
+        transform: translateY(110px) scale(0.9) rotate(-4deg);
+      }
+      100% {
+        opacity: 1;
+        transform: translateY(0px) scale(1) rotate(0deg);
+      }
+    }
+
+    /* Ingredient Pill Styling */
+    .ingredient-pill {
+      background: var(--pill-bg);
+      color: #1F140E;
+      backdrop-filter: blur(10px);
+      -webkit-backdrop-filter: blur(10px);
+      border: 1px solid rgba(255, 255, 255, 0.35);
+      box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.35);
+      transition: all 0.32s cubic-bezier(0.22, 1, 0.36, 1);
+    }
+
+    .ingredient-pill:hover {
+      transform: translateX(-6px) scale(1.02);
+      background: rgba(226, 244, 231, 0.96);
+    }
+
+    /* Drip Pulse Animation in Section 3 */
+    @keyframes dropPulse {
+      0%, 100% { transform: translateY(0px) scale(1); filter: drop-shadow(0 0 18px rgba(242, 206, 90, 0.55)); }
+      50% { transform: translateY(6px) scale(1.04, 0.97); filter: drop-shadow(0 0 28px rgba(242, 206, 90, 0.85)); }
+    }
+
+    .coffee-drop-glow {
+      animation: dropPulse 3.2s ease-in-out infinite;
+    }
+
+    /* Interactive Mural Spotlight */
+    #mural-lit-layer {
+      clip-path: circle(165px at var(--mx, 50%) var(--my, 50%));
+      transition: clip-path 0.06s linear;
+    }
+
+    /* Custom Scrollbar */
+    ::-webkit-scrollbar {
+      width: 8px;
+    }
+    ::-webkit-scrollbar-track {
+      background: #1B0B06;
+    }
+    ::-webkit-scrollbar-thumb {
+      background: #6B2D14;
+      border-radius: 4px;
+    }
+    ::-webkit-scrollbar-thumb:hover {
+      background: #9B431E;
+    }
+  
